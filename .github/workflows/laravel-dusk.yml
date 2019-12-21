@@ -59,15 +59,15 @@ jobs:
         run: |
           yarn install --frozen-lockfile --ignore-engines
           yarn build
+      - name: Create DB and schemas
+        working-directory: database
+        run: |
+          touch database.sqlite
       - name: Copy .env
         run: |
           cp .env.dusk.ci .env
           cp phpunit.ci.xml phpunit.xml
           php artisan key:generate
-      - name: Create DB and schemas
-        run: |
-          mkdir -p database
-          touch database/database.sqlite
           php artisan migrate
       - name: Upgrade Chrome Driver
         run: php artisan dusk:chrome-driver 72
