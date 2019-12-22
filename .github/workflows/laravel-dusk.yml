@@ -57,6 +57,7 @@ jobs:
       - name: Install yarn dependencies and compile
         working-directory: frontend
         run: |
+          cp .env.example .env
           yarn install --frozen-lockfile --ignore-engines
           yarn build
       - name: Create DB and schemas
@@ -69,6 +70,7 @@ jobs:
           cp phpunit.ci.xml phpunit.xml
           php artisan key:generate
           php artisan migrate
+          echo "127.0.0.1    som.test" >> /etc/hosts
       - name: Upgrade Chrome Driver
         run: |
           php artisan dusk:update
