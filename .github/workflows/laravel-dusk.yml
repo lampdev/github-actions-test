@@ -70,6 +70,7 @@ jobs:
           cp phpunit.ci.xml phpunit.xml
           php artisan key:generate
           php artisan migrate
+          php artisan optimize
           echo "127.0.0.1    som.test" >> /etc/hosts
       - name: Upgrade Chrome Driver
         run: |
