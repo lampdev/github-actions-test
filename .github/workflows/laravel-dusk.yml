@@ -77,6 +77,7 @@ jobs:
           php artisan migrate
           php artisan optimize
           echo "127.0.0.1    som.test" >> /etc/hosts
+          cat /etc/hosts
       - name: Upgrade Chrome Driver
         run: |
           php artisan dusk:update
@@ -86,7 +87,7 @@ jobs:
         run: ./vendor/laravel/dusk/bin/chromedriver-linux > /dev/null 2>&1 &
 
       - name: Run Laravel Server
-        run: php artisan serve > /dev/null 2>&1 &
+        run: php artisan serve --host=som.test > /dev/null 2>&1 &
 
       - name: Run Dusk Tests
         run: php artisan dusk
