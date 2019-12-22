@@ -71,8 +71,8 @@ jobs:
           php artisan migrate
       - name: Upgrade Chrome Driver
         run: |
-        php artisan dusk:chrome-driver 72
-        php artisan dusk:update
+          php artisan dusk:chrome-driver 72
+          php artisan dusk:update
 
       - name: Start Chrome Driver
         run: ./vendor/laravel/dusk/bin/chromedriver-linux > /dev/null 2>&1 &
