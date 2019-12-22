@@ -18,7 +18,7 @@ class FolderListResource extends JsonResource
         $data = [];
 
         if (!empty($this->resource)) {
-            foreach($this->resource as $item) {
+            foreach ($this->resource as $item) {
                 $data[] = [
                     'title' => $item->title,
                     'parent_id' => $item->parent_id,

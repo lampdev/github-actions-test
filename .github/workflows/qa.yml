@@ -34,4 +34,4 @@ jobs:
         run: ./vendor/bin/phan --allow-polyfill-parser
 
       - name: Phpcs
-        run: ./vendor/bin/phpcs
+        run: ./vendor/bin/phpcs --standard=PSR12 app

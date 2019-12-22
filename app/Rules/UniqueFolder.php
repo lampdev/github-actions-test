@@ -30,7 +30,13 @@ class UniqueFolder implements Rule
      */
     public function passes($attribute, $value)
     {
-        $item = $this->folderRepository->getByUserIdAndParentId(request()->get('id'), Auth::id(), request()->get('parent_id'), $value);
+        $item = $this->folderRepository->getByUserIdAndParentId(
+            request()->get('id'),
+            Auth::id(),
+            request()->get('parent_id'),
+            $value
+        );
+
         if (!empty($item)) {
             return false;
         } else {
