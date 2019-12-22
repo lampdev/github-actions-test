@@ -10,6 +10,8 @@ class FolderListResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
+     * @suppress PhanUndeclaredMethod
+     *
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
