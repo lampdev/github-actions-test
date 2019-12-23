@@ -2,8 +2,6 @@
 
 namespace App\Repositories;
 
-use Illuminate\Support\Facades\Auth;
-
 class AbstractRepository implements AbstractInterface
 {
     protected $model;

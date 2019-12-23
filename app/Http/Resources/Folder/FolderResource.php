@@ -3,12 +3,14 @@
 namespace App\Http\Resources\Folder;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Carbon;
+use Carbon\Carbon;
 
 class FolderResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
+     *
+     * @suppress PhanUndeclaredClassMethod
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array

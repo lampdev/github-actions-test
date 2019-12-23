@@ -13,5 +13,5 @@ use App\Services\AbstractInterface;
 
 interface UserServiceInterface extends AbstractInterface
 {
-
+    public function changePassword(int $userId, string $password);
 }
