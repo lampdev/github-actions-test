@@ -54,7 +54,7 @@ class FolderRepository extends AbstractRepository
      * @param string  $title
      * @return integer
      */
-    public function getByUserIdAndParentId(int $id, int $user_id, int $parent_id, string $title): int
+    public function getByUserIdAndParentId(int $id, int $user_id, int $parent_id, string $title): ?int
     {
         return $this->model->where([
             ['user_id', $user_id],

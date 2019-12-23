@@ -81,7 +81,7 @@ class FolderService
      * @param string  $title
      * @return iterable
      */
-    public function getByUserIdAndParentId(int $id, int $parent_id, string $title): int
+    public function getByUserIdAndParentId(int $id, int $parent_id, string $title): ?int
     {
         return $this->folderRepository->getByUserIdAndParentId($id, Auth::id(), $parent_id, $title);
     }
